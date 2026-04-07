@@ -1,0 +1,1 @@
+.prose :where(img):not(:where([class~=not-prose] *)){margin-top:1rem;margin-bottom:1rem}
