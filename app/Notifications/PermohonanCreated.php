@@ -1,0 +1,53 @@
+<?php
+
+namespace App\Notifications;
+
+use App\Models\Permohonan;
+use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Notifications\Messages\BroadcastMessage;
+use Illuminate\Notifications\Messages\DatabaseMessage;
+use Illuminate\Notifications\Notification;
+
+class PermohonanCreated extends Notification
+{
+    use Queueable;
+
+    public $permohonan;
+
+    public function __construct(Permohonan $permohonan)
+    {
+        $this->permohonan = $permohonan;
+    }
+
+    public function via($notifiable)
+    {
+        // kirim ke database + broadcast (pusher)
+        return ['database', 'broadcast'];
+    }
+
+    public function toDatabase($notifiable)
+    {
+        return [
+            'user_id' => $this->permohonan->user_id,
+            'permohonan_id' => $this->permohonan->id,
+            'title' => $this->permohonan->title,
+            'status' => 'Status : '.$this->permohonan->status,
+            'message' => 'Ada permohonan baru dari : '.$this->permohonan->user->name,
+        ];
+        
+    }
+
+    public function toBroadcast($notifiable)
+    {
+        return new BroadcastMessage([
+            'id'        => $this->permohonan->id,
+            'title'     => $this->permohonan->title,
+            'kategori'  => $this->permohonan->kategori,
+            'priority'  => $this->permohonan->priority,
+            'status'    => $this->permohonan->status,
+            'user_id'   => $this->permohonan->user_id,
+            'created_at'=> $this->permohonan->created_at,
+        ]);
+    }
+}
