@@ -128,10 +128,11 @@ Route::prefix('sambutan')->name('sambutan.')->group(function () {
     // Route::resource('old-sambutan', SambutanController::class);
 });
 
+Route::get('/permohonan/create', [PermohonanController::class, 'create'])->name('permohonan.create');
+Route::post('/permohonan', [PermohonanController::class, 'store'])->name('permohonan.store');
+
 Route::middleware(['auth', CheckUserTipe::class . ':All Role,USERB'])->group(function () {
     Route::get('/permohonan', [PermohonanController::class, 'index'])->name('permohonan.index');
-    Route::get('/permohonan/create', [PermohonanController::class, 'create'])->name('permohonan.create');
-    Route::post('/permohonan', [PermohonanController::class, 'store'])->name('permohonan.store');
     Route::get('/permohonan/{id}', [PermohonanController::class, 'show'])->name('permohonan.show');
     Route::get('/permohonan/{id}/edit', [PermohonanController::class, 'edit'])->name('permohonan.edit');
     Route::put('/permohonan/{id}', [PermohonanController::class, 'update'])->name('permohonan.update');

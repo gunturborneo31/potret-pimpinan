@@ -117,15 +117,18 @@ public function create()
         'disposisi'   => $request->disposisi,
         'status'      => 'Diajukan',
     ]);
-   
+    
     // Kirim notifikasi ke semua SUPERADMIN
     $superadmins = User::where('role', 'SUPERADMIN')->get();
     foreach ($superadmins as $admin) {
         $admin->notify(new PermohonanCreated($permohonan));
     }
 
+    if (auth()->check()) {
+        return redirect()->route('permohonan.index')->with('success', 'Permohonan berhasil dikirim.');
+    }
 
-    return redirect()->route('permohonan.index')->with('success', 'Permohonan berhasil dikirim.');
+    return redirect()->route('landing.index')->with('success', 'Permohonan berhasil dikirim.');
     
 }
 
