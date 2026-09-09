@@ -1,5 +1,5 @@
 <template>
-  <Head :title="folder.judul" title="- Potret Pimpinan" />
+  <Head :title="`${folder.judul} - Layanan Dokumentasi Pimpinan`" />
 
   <div :class="{ 'dark': isDarkMode }">
     <div class="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-white transition-colors duration-300">
@@ -198,7 +198,7 @@
                       class="text-white/70 font-extrabold text-3xl md:text-5xl
                              tracking-wider rotate-[-20deg] text-center
                              drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] px-3">
-                      <!-- Biro Adpim - Seetda Prov. Kaltim -->
+                      <!-- Biro Adpim - Seetda Kab. Mahulu -->
                     </div>
                   </div>
                 </div>
@@ -223,13 +223,13 @@
 
       <!-- Footer -->
       <footer class="bg-gray-100 dark:bg-gray-800 text-center py-6 text-sm text-gray-600 dark:text-gray-300 mt-12">
-        &copy; 2025 Potret Pimpinan by Biro Administrasi Pimpinan Provinsi Kalimantan Timur
+        &copy; 2025 Layanan Dokumentasi Pimpinan by Biro Administrasi Pimpinan Kabupaten Mahakam Ulu
       </footer>
 
       <!-- Modal Feedback -->
       <div v-if="showFeedbackModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
         <div class="bg-white dark:bg-gray-900 p-6 rounded-lg w-full max-w-md text-center">
-          <h2 class="text-lg font-semibold mb-4 text-gray-800 dark:text-white">Bagaimana menurut Anda <br>Pelayanan Potret Pimpinan?</h2>
+          <h2 class="text-lg font-semibold mb-4 text-gray-800 dark:text-white">Bagaimana menurut Anda <br>Pelayanan Dokumentasi Pimpinan?</h2>
 
           <div class="flex justify-center gap-6 text-3xl mb-4">
             <span @click="selectedEmote = 'senyum-lebar'" :class="{ 'scale-110': selectedEmote === 'senyum-lebar' }" class="cursor-pointer">😁</span>

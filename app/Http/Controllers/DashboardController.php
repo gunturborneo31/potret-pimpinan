@@ -102,7 +102,7 @@ class DashboardController extends Controller
         $start = now()->startOfMonth()->subMonths(11);
 
         $monthly = KegiatanFolder::select(
-                DB::raw("DATE_FORMAT(tanggal_kegiatan, '%Y-%m') as ym"),
+                DB::raw("strftime('%Y-%m', tanggal_kegiatan) as ym"),
                 DB::raw('COUNT(*) as total'),
                 DB::raw('SUM(is_public = 1) as publik'),
                 DB::raw('SUM(is_public = 0) as privat')

@@ -1,6 +1,0 @@
-import{c as d}from"./createLucideIcon-BSpSquPB.js";import{q as l,g as c,o as i,b as a,a as o,d as u,w as f,f as m,t as h}from"./app-CITwsJmL.js";/**
- * @license lucide-vue-next v0.526.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */const _=d("folder",[["path",{d:"M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z",key:"1kt360"}]]),g={class:"w-full bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 px-4 py-3 flex items-center justify-between hover:shadow-md transition"},p={class:"flex items-center gap-4"},x={class:"flex flex-col"},b={__name:"FolderList",props:{folder:Object},setup(r){function s(e,t=25){return e.length>t?e.slice(0,t)+"...":e}return(e,t)=>{const n=l("router-link");return i(),c("div",g,[a("div",p,[o(u(_),{class:"w-6 h-6 text-orange-500 shrink-0"}),a("div",x,[o(n,{to:{name:"kegiatansub.folders.show",params:{slug:r.folder.slug}},class:"text-sm font-medium text-gray-800 dark:text-white hover:underline"},{default:f(()=>[m(h(s(r.folder.judul)),1)]),_:1},8,["to"])])])])}}};export{b as default};

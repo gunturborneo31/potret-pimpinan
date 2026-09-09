@@ -1,5 +1,5 @@
 <template>
-  <Head title="Daftar Berita - Potret Pimpinan" />
+  <Head title="Daftar Berita - Layanan Dokumentasi Pimpinan" />
 
   <div :class="{ 'dark': isDarkMode }">
     <div class="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-white">
@@ -8,7 +8,7 @@
         <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3">
           <a href="/" class="flex items-center gap-2">
             <img src="/img/logo-only.png" alt="Logo" class="h-8 w-8 object-contain" />
-            <span class="font-bold text-xl">Potret Pimpinan</span>
+            <span class="font-bold text-xl">Layanan Dokumentasi Pimpinan</span>
           </a>
           <div class="flex items-center gap-4 text-sm">
             <a href="/" class="hover:underline">Beranda</a>
@@ -158,7 +158,7 @@
 
       <!-- Footer -->
       <footer class="bg-gray-100 dark:bg-gray-800 text-center py-6 text-sm text-gray-600 dark:text-gray-300 mt-12 px-4">
-        &copy; 2025 Potret Pimpinan by Biro Administrasi Pimpinan Provinsi Kalimantan Timur
+        &copy; 2025 Layanan Dokumentasi Pimpinan by Biro Administrasi Pimpinan Kabupaten Mahakam Ulu
       </footer>
     </div>
   </div>

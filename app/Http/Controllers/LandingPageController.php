@@ -262,7 +262,7 @@ public function watermarkPublic(\App\Models\KegiatanFile $file)
                     $wm->clear(); $wm->destroy();
                 } else {
                     // ---- Fallback Teks: TILE juga (kecil) ----
-                    $text  = 'Biro Adpim - Setda Prov. Kaltim';
+                    $text  = 'Biro Adpim - Setda Kab. Mahulu';
                     $draw  = new \ImagickDraw();
                     $draw->setFillColor(new \ImagickPixel("rgba(255,255,255,".(string)$opacity.")"));
                     $draw->setStrokeColor(new \ImagickPixel("rgba(0,0,0,".(string)min(1.0, $opacity*0.6).")"));
@@ -451,7 +451,7 @@ private function gdTileTextSmall($img, int $w, int $h, float $angle, int $gap): 
     $white = imagecolorallocatealpha($img, 255, 255, 255, 127 - (int)(0.80*127));
     $black = imagecolorallocatealpha($img, 0, 0, 0,   127 - (int)(0.35*127));
 
-    $text = 'Biro Adpim - Setda Prov. Kaltim';
+    $text = 'Biro Adpim - Setda Kab. Mahulu';
     $fontPath = is_file(resource_path('fonts/Inter-ExtraBold.ttf'))
         ? resource_path('fonts/Inter-ExtraBold.ttf')
         : null;
@@ -507,7 +507,7 @@ private function lockedPlaceholder(string $reason = 'Pratinjau tidak tersedia', 
   <text x="600" y="360" fill="#ffffff" fill-opacity="0.9" font-size="36" font-weight="700" text-anchor="middle">{$reason}</text>
   <text x="600" y="410" fill="#ffffff" fill-opacity="0.75" font-size="22" text-anchor="middle">{$detail}</text>
   <text x="600" y="700" fill="#ffffff" fill-opacity="0.22" font-size="32" font-weight="800" text-anchor="middle" transform="rotate(-10 600 700)">
-    Biro Adpim - Seetda Prov. Kaltim
+    Biro Adpim - Seetda Kab. Mahulu
   </text>
 </svg>
 SVG;

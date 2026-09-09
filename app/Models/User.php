@@ -64,7 +64,7 @@ protected static function boot()
 
 public function getTipeAttribute()
 {
-    return $this->attributes['tipe'];
+    return $this->attributes['tipe'] ?? null;
 }
 
 

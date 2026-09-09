@@ -12,8 +12,8 @@ return new class extends Migration {
             // Jalankan baris di bawah HANYA jika sekarang bukan uuid/char(36):
             // $table->uuid('sambutan_id')->change(); // butuh doctrine/dbal
 
-            // 2) Drop FK lama yang menunjuk ke `sambutans`
-            $table->dropForeign('sambutan_files_sambutan_id_foreign');
+            // 2) Drop FK lama yang menunjuk ke `sambutans` - SQLite requires array syntax
+            $table->dropForeign(['sambutan_id']);
 
             // 3) Tambah FK baru menunjuk ke tabel yang benar
             $table->foreign('sambutan_id')

@@ -24,6 +24,11 @@ class CheckUserTipe
             return redirect()->route('login');
         }
 
+        // SUPERADMIN dan STAFF boleh akses semua
+        if (in_array($user->role, ['SUPERADMIN', 'STAFF'])) {
+            return $next($request);
+        }
+
         // Jika Super Admin atau All Role, boleh akses semua
         if (in_array($user->tipe, ['All Role'])) {
             return $next($request);

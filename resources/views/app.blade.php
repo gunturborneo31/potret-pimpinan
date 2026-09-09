@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title inertia>{{ config('app.name', 'Laravel') }}</title>
+        <title inertia>Layanan Dokumentasi Pimpinan</title>
         <meta name="author" content="rezapadillah">
-        <meta name="description" content="Potret Pimpinan - Kerja Nyata, Tersaji Jelas">
-        <meta name="keywords" content="Potret Pimpinan Kaltim, Potret Pimpinan, Aplikasi Potret Pimpinan Kalimantan TImur">
-        <meta property="og:title" content="POTRET PIMPINAN">
-        <meta property="og:site_name" content="Potret Pimpinan ">
-        <meta property="og:url" content="https://potretpimpinan.kaltimprov.go.id/">
-        <meta property="og:description" content="Aplikasi Potret Pimpinan Pemerintah Provinsi Kalimantan Timur">
+        <meta name="description" content="Layanan Dokumentasi Pimpinan Pemerintah Kabupaten Mahakam Ulu">
+        <meta name="keywords" content="Layanan Dokumentasi Pimpinan, Mahulu, Mahakam Ulu, dokumentasi pimpinan">
+        <meta property="og:title" content="Layanan Dokumentasi Pimpinan">
+        <meta property="og:site_name" content="Layanan Dokumentasi Pimpinan">
+        <meta property="og:url" content="https://potretpimpinan.mahuluprov.go.id/">
+        <meta property="og:description" content="Layanan dokumentasi pimpinan Pemerintah Kabupaten Mahakam Ulu">
         <meta property="og:type" content="website">
         <meta property="og:image" content="{{ asset('img/og-image.jpg') }}">
 

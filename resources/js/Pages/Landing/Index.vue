@@ -1,5 +1,5 @@
 <template>
-  <Head title="Potret Pimpinan - Pemerintah Provinsi Kalimantan Timur" />
+  <Head title="Layanan Dokumentasi Pimpinan - Pemerintah Kabupaten Mahakam Ulu" />
   <div :class="{ 'dark': isDarkMode }">
 
   <div class="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-white">
@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3">
           <a href="/" class="flex items-center gap-2">
             <img src="/img/logo-only.png" alt="Logo" class="h-8 w-8 object-contain" />
-            <span class="font-bold text-xl">Potret Pimpinan</span>
+            <span class="font-bold text-xl">Layanan Dokumentasi Pimpinan</span>
           </a>
           <div class="flex items-center gap-4 text-sm">
             <a href="/" class="text-orange-600 hover:underline">Beranda</a>
@@ -32,7 +32,7 @@
   <div class="aspect-[32/10] w-full">
     <img
       src="/img/slider-pimpinan-fix.jpg"
-      alt="Slider Potret Pimpinan"
+      alt="Slider Layanan Dokumentasi Pimpinan"
       class="w-full h-full object-cover object-center"
     />
   </div>
@@ -53,7 +53,7 @@
     <div class="flex justify-center">
       <img
         src="/img/pimpinan-min.png"
-        alt="Pimpinan Provinsi Kalimantan Timur"
+        alt="Pimpinan Kabupaten Mahakam Ulu"
         class="w-full max-w-2xl h-auto object-contain"
       />
     </div>
@@ -61,9 +61,7 @@
     <!-- Kanan: Teks -->
     <div class="text-gray-700 dark:text-gray-300 leading-relaxed text-base sm:text-lg md:text-left text-center">
       <p>
-        Selamat datang di platform <strong>Potret Pimpinan</strong>. Platform ini menyajikan dokumentasi,
-        sambutan dan informasi kegiatan pimpinan. Kami berkomitmen memberikan akses publik terhadap dokumen
-        sambutan/materi pimpinan, dokumentasi dan komunikasi pimpinan serta permohonan.
+        Selamat datang di Layanan Dokumentasi Pimpinan. Layanan yang dikelola Bagian Protokol dan Komunikasi Pimpinan menyajikan dokumentasi, sambutan dan informasi kegiatan pimpinan. Kami berkomitmen memberikan akses publik terhadap dokumen sambutan/materi pimpinan, dokumentasi kegiatan pimpinan serta permohonan berkaitan dengan dokumentasi kegiatan pimpinan lainnya.
       </p>
     </div>
   </div>
@@ -385,7 +383,7 @@
 
     <!-- Footer -->
     <footer class="bg-gray-100 dark:bg-gray-800 text-center py-6 text-sm text-gray-600 dark:text-gray-300 mt-12 px-4">
-      &copy; 2025 Potret Pimpinan by Biro Administrasi Pimpinan Provinsi Kalimantan Timur
+      &copy; 2025 Layanan Dokumentasi Pimpinan by Biro Administrasi Pimpinan Kabupaten Mahakam Ulu
     </footer>
   </div>
   </div>

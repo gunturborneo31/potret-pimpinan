@@ -46,7 +46,7 @@ const SIDEBAR_KEY = 'pp_sidebar_collapsed';
 // ===== Bottom Nav (mobile/tablet) =====
 const showMore = ref(false); // sheet “Lainnya / Titik tiga”
 const page = usePage();
-const role = computed(() => page?.props?.auth?.user?.tipe || 'All Role');
+const role = computed(() => page?.props?.auth?.user?.role || 'BIASA');
 
 // Helper: aktifkan state pada nav item
 const isActivePath = (start) => {
@@ -60,34 +60,26 @@ const isActivePath = (start) => {
 // Semua menu per role (pakai path sama seperti sidebar di file-mu)
 const allMenusByRole = computed(() => {
   const map = {
-    'All Role': [
+    'SUPERADMIN': [
       { name: 'Dashboard', href: route('dashboard'), icon: Home },
       { name: 'Permohonan', href: '/permohonan', icon: FileText },
-      { name: 'Berita', href: '/berita', icon: Megaphone },
       { name: 'Sambutan', href: '/sambutan', icon: MessageCircle },
       { name: 'Post Social Media', href: '/post-sosmed', icon: Share2 },
       { name: 'Kegiatan', href: '/kegiatan', icon: FolderOpen },
       { name: 'Pengguna', href: '/users', icon: Users },
     ],
-    'Staf Sambutan': [
+    'STAFF': [
       { name: 'Dashboard', href: route('dashboard'), icon: Home },
+      { name: 'Permohonan', href: '/permohonan', icon: FileText },
       { name: 'Sambutan', href: '/sambutan', icon: MessageCircle },
-    ],
-    'Staf Berita': [
-      { name: 'Dashboard', href: route('dashboard'), icon: Home },
-      { name: 'Berita', href: '/berita', icon: Megaphone },
       { name: 'Post Social Media', href: '/post-sosmed', icon: Share2 },
-    ],
-    'Staf Dokumentasi': [
-      { name: 'Dashboard', href: route('dashboard'), icon: Home },
       { name: 'Kegiatan', href: '/kegiatan', icon: FolderOpen },
-      { name: 'Post Social Media', href: '/post-sosmed', icon: Share2 },
     ],
-    'USERB': [
+    'BIASA': [
       { name: 'Permohonan', href: '/permohonan', icon: FileText },
     ],
   };
-  return map[role.value] || map['All Role'];
+  return map[role.value] || [];
 });
 
 // 4 menu utama (untuk role selain USERB)
@@ -243,93 +235,23 @@ watch(isCollapsed, (val) => {
 
       <!-- Navigation (desktop) -->
       <nav class="px-2 py-4 space-y-2 overflow-y-auto h-[calc(100%-4rem)]">
-        <div v-if="$page.props.auth.user.tipe === 'All Role'">
-          <Link :href="route('dashboard')" class="flex items-center gap-2 px-3 py-4 rounded hover:bg-orange-100 dark:hover:bg-gray-700" :class="{ 'justify-center': isCollapsed }">
-            <Home class="h-5 w-5 text-orange-500" />
-            <span v-show="!isCollapsed">Dashboard</span>
+        <template v-for="item in allMenusByRole" :key="item.name">
+          <Link :href="item.href" class="flex items-center gap-2 px-3 py-4 rounded hover:bg-orange-100 dark:hover:bg-gray-700 transition-colors" :class="{ 'justify-center': isCollapsed }">
+            <component :is="item.icon" class="h-5 w-5 text-orange-500 flex-shrink-0" />
+            <span v-show="!isCollapsed" class="truncate">{{ item.name }}</span>
           </Link>
-          <Link href="/permohonan" class="flex items-center gap-2 px-3 py-4 rounded hover:bg-orange-100 dark:hover:bg-gray-700" :class="{ 'justify-center': isCollapsed }">
-            <FileText class="h-5 w-5 text-orange-500" />
-            <span v-show="!isCollapsed">Permohonan</span>
-          </Link>
-          <Link href="/berita" class="flex items-center gap-2 px-3 py-4 rounded hover:bg-orange-100 dark:hover:bg-gray-700" :class="{ 'justify-center': isCollapsed }">
-            <Megaphone class="h-5 w-5 text-orange-500" />
-            <span v-show="!isCollapsed">Berita</span>
-          </Link>
-          <Link href="/sambutan" class="flex items-center gap-2 px-3 py-4 rounded hover:bg-orange-100 dark:hover:bg-gray-700" :class="{ 'justify-center': isCollapsed }">
-            <MessageCircle class="h-5 w-5 text-orange-500" />
-            <span v-show="!isCollapsed">Sambutan</span>
-          </Link>
-          <Link href="/post-sosmed" class="flex items-center gap-2 px-3 py-4 rounded hover:bg-orange-100 dark:hover:bg-gray-700" :class="{ 'justify-center': isCollapsed }">
-            <Share2 class="h-5 w-5 text-orange-500" />
-            <span v-show="!isCollapsed">Post Social Media</span>
-          </Link>
-          <Link href="/kegiatan" class="flex items-center gap-2 px-3 py-4 rounded hover:bg-orange-100 dark:hover:bg-gray-700" :class="{ 'justify-center': isCollapsed }">
-            <FolderOpen class="h-5 w-5 text-orange-500" />
-            <span v-show="!isCollapsed">Kegiatan</span>
-          </Link>
-          <Link href="/users" class="flex items-center gap-2 px-3 py-4 rounded hover:bg-orange-100 dark:hover:bg-gray-700" :class="{ 'justify-center': isCollapsed }">
-            <Users class="h-5 w-5 text-orange-500" />
-            <span v-show="!isCollapsed">Pengguna</span>
-          </Link>
-        </div>
-
-        <div v-if="$page.props.auth.user.tipe === 'Staf Sambutan'">
-          <Link :href="route('dashboard')" class="flex items-center gap-2 px-3 py-4 rounded hover:bg-orange-100 dark:hover:bg-gray-700" :class="{ 'justify-center': isCollapsed }">
-            <Home class="h-5 w-5 text-orange-500" />
-            <span v-show="!isCollapsed">Dashboard</span>
-          </Link>
-          <Link href="/sambutan" class="flex items-center gap-2 px-3 py-4 rounded hover:bg-orange-100 dark:hover:bg-gray-700" :class="{ 'justify-center': isCollapsed }">
-            <MessageCircle class="h-5 w-5 text-orange-500" />
-            <span v-show="!isCollapsed">Sambutan</span>
-          </Link>
-        </div>
-
-        <div v-if="$page.props.auth.user.tipe === 'Staf Berita'">
-          <Link :href="route('dashboard')" class="flex items-center gap-2 px-3 py-4 rounded hover:bg-orange-100 dark:hover:bg-gray-700" :class="{ 'justify-center': isCollapsed }">
-            <Home class="h-5 w-5 text-orange-500" />
-            <span v-show="!isCollapsed">Dashboard</span>
-          </Link>
-          <Link href="/berita" class="flex items-center gap-2 px-3 py-4 rounded hover:bg-orange-100 dark:hover:bg-gray-700" :class="{ 'justify-center': isCollapsed }">
-            <Megaphone class="h-5 w-5 text-orange-500" />
-            <span v-show="!isCollapsed">Berita</span>
-          </Link>
-          <Link href="/post-sosmed" class="flex items-center gap-2 px-3 py-4 rounded hover:bg-orange-100 dark:hover:bg-gray-700" :class="{ 'justify-center': isCollapsed }">
-            <Share2 class="h-5 w-5 text-orange-500" />
-            <span v-show="!isCollapsed">Post Social Media</span>
-          </Link>
-        </div>
-
-        <div v-if="$page.props.auth.user.tipe === 'Staf Dokumentasi'">
-          <Link :href="route('dashboard')" class="flex items-center gap-2 px-3 py-4 rounded hover:bg-orange-100 dark:hover:bg-gray-700" :class="{ 'justify-center': isCollapsed }">
-            <Home class="h-5 w-5 text-orange-500" />
-            <span v-show="!isCollapsed">Dashboard</span>
-          </Link>
-          <Link href="/kegiatan" class="flex items-center gap-2 px-3 py-4 rounded hover:bg-orange-100 dark:hover:bg-gray-700" :class="{ 'justify-center': isCollapsed }">
-            <FolderOpen class="h-5 w-5 text-orange-500" />
-            <span v-show="!isCollapsed">Kegiatan</span>
-          </Link>
-          <Link href="/post-sosmed" class="flex items-center gap-2 px-3 py-4 rounded hover:bg-orange-100 dark:hover:bg-gray-700" :class="{ 'justify-center': isCollapsed }">
-            <Share2 class="h-5 w-5 text-orange-500" />
-            <span v-show="!isCollapsed">Post Social Media</span>
-          </Link>
-        </div>
-
-        <div v-if="$page.props.auth.user.tipe === 'USERB'">
-          <Link href="/permohonan" class="flex items-center gap-2 px-3 py-4 rounded hover:bg-orange-100 dark:hover:bg-gray-700" :class="{ 'justify-center': isCollapsed }">
-            <FileText class="h-5 w-5 text-orange-500" />
-            <span v-show="!isCollapsed">Permohonan</span>
-          </Link>
-        </div>
+        </template>
       </nav>
     </aside>
 
     <!-- Main Content -->
     <div class="flex-1 flex flex-col">
       <header class="bg-white dark:bg-gray-800 shadow px-4 py-3 flex items-center justify-between">
-        <!-- <h1 class="text-lg font-semibold text-gray-800 dark:text-gray-100">
-          <slot name="header" />
-        </h1> -->
+        <!-- App Title -->
+        <div class="hidden md:flex items-center gap-3">
+          <img src="/img/logo-only.png" alt="Logo" class="h-8" />
+          <h1 class="text-lg font-bold text-orange-600 dark:text-orange-400">Layanan Dokumentasi Pimpinan</h1>
+        </div>
 
         <div class="ml-auto flex items-center gap-4">
           <!-- Notif -->
