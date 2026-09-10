@@ -126,6 +126,33 @@ onUpdated(() => {
             </div>
           </div>
 
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4 sm:mb-6">
+            <div>
+              <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">Nama Pemohon</p>
+              <p class="text-sm sm:text-base font-semibold text-gray-800 dark:text-gray-100">
+                {{ permohonan.nama_pemohon ?? permohonan.user?.name ?? '-' }}
+              </p>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">Email</p>
+              <p class="text-sm sm:text-base font-semibold text-gray-800 dark:text-gray-100">
+                {{ permohonan.email_pemohon ?? permohonan.user?.email ?? '-' }}
+              </p>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">No. HP/WhatsApp</p>
+              <p class="text-sm sm:text-base font-semibold text-gray-800 dark:text-gray-100">
+                {{ permohonan.no_hp_pemohon ?? '-' }}
+              </p>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">Instansi/Asal</p>
+              <p class="text-sm sm:text-base font-semibold text-gray-800 dark:text-gray-100">
+                {{ permohonan.instansi_pemohon ?? '-' }}
+              </p>
+            </div>
+          </div>
+
           <!-- Deskripsi -->
           <div class="mt-3 sm:mt-4">
             <p class="font-semibold text-gray-800 dark:text-gray-100 mb-2">Deskripsi</p>

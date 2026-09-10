@@ -1,5 +1,5 @@
 <template>
-  <Head :title="`${folder.judul} - Layanan Dokumentasi Pimpinan`" />
+  <Head :title="`${folder.judul} - Layanan Komunikasi dan Dokumentasi  Pimpinan`" />
 
   <div :class="{ 'dark': isDarkMode }">
      <div class="bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 px-4 py-3 text-center font-semibold">
@@ -13,6 +13,9 @@
         <h1 class="text-lg sm:text-xl font-bold truncate max-w-full">📁 {{ folder.judul }}</h1>
 
         <div class="flex flex-wrap gap-2 sm:gap-3">
+          <a href="/permohonan/create" class="bg-orange-600 text-white px-3 py-1 rounded hover:bg-orange-700 text-sm shadow">
+            Permohonan
+          </a>
           <button @click="toggleDarkMode" class="border px-3 py-1 rounded text-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition">
             {{ isDarkMode ? '☀️' : '🌙' }}
           </button>
@@ -150,13 +153,13 @@
 
       <!-- Footer -->
       <footer class="bg-gray-100 dark:bg-gray-800 text-center py-6 text-sm text-gray-600 dark:text-gray-300 mt-12">
-        &copy; 2025 Layanan Dokumentasi Pimpinan by Biro Administrasi Pimpinan Kabupaten Mahakam Ulu
+        &copy; 2025 Layanan Komunikasi dan Dokumentasi  Pimpinan by Biro Administrasi Pimpinan Kabupaten Mahakam Ulu
       </footer>
 
       <!-- Modal Feedback -->
 <div v-if="showFeedbackModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
   <div class="bg-white dark:bg-gray-900 p-6 rounded-lg w-full max-w-md text-center">
-    <h2 class="text-lg font-semibold mb-4 text-gray-800 dark:text-white">Bagaimana menurut Anda <br>Pelayanan Dokumentasi Pimpinan?</h2>
+    <h2 class="text-lg font-semibold mb-4 text-gray-800 dark:text-white">Bagaimana menurut Anda <br>PeLayanan Komunikasi dan Dokumentasi  Pimpinan?</h2>
 
     <div class="flex justify-center gap-6 text-3xl mb-4">
       <span @click="selectedEmote = 'senyum-lebar'" :class="{ 'scale-110': selectedEmote === 'senyum-lebar' }" class="cursor-pointer">😁</span>

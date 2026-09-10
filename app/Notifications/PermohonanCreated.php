@@ -28,12 +28,16 @@ class PermohonanCreated extends Notification
 
     public function toDatabase($notifiable)
     {
+        $pengaju = $this->permohonan->nama_pemohon
+            ?? optional($this->permohonan->user)->name
+            ?? 'Pemohon';
+
         return [
             'user_id' => $this->permohonan->user_id,
             'permohonan_id' => $this->permohonan->id,
             'title' => $this->permohonan->title,
             'status' => 'Status : '.$this->permohonan->status,
-            'message' => 'Ada permohonan baru dari : '.$this->permohonan->user->name,
+            'message' => 'Ada permohonan baru dari : '.$pengaju,
         ];
         
     }

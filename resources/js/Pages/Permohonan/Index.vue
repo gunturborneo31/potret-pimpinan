@@ -108,7 +108,7 @@ function resetFilters() {
           v-if="$page.props.auth.user.role === 'SUPERADMIN'"
           v-model="form.user"
           type="text"
-          placeholder="Cari User..."
+          placeholder="Cari Pemohon..."
           class="border dark:border-gray-600 dark:bg-gray-700 dark:text-white px-2 py-1 rounded" />
 
         <select
@@ -190,7 +190,7 @@ function resetFilters() {
             </div>
             <div>
               <span class="text-gray-500">Pemohon:</span>
-              <span class="font-medium"> {{ p.user?.name ?? '-' }} </span>
+              <span class="font-medium"> {{ p.nama_pemohon ?? p.user?.name ?? '-' }} </span>
             </div>
           </div>
 
@@ -279,7 +279,7 @@ function resetFilters() {
                 </td>
 
                 <td class="px-3 py-2 border hidden lg:table-cell">
-                  {{ p.user?.name ?? '-' }}
+                  {{ p.nama_pemohon ?? p.user?.name ?? '-' }}
                 </td>
 
                 <td class="px-3 py-2 border">

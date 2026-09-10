@@ -4,7 +4,7 @@
     <!-- Navbar -->
     <nav class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 shadow">
       <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <h1 class="text-xl font-bold text-orange-600">Layanan Dokumentasi Pimpinan</h1>
+        <h1 class="text-xl font-bold text-orange-600">Layanan Komunikasi dan Dokumentasi  Pimpinan</h1>
         <div class="space-x-6 text-sm font-medium">
           <a href="#beranda" class="hover:text-orange-600">Beranda</a>
           <a href="#sambutan" class="hover:text-orange-600">Sambutan</a>
@@ -18,7 +18,7 @@
     <section id="beranda" class="relative h-[400px] overflow-hidden bg-gray-100 dark:bg-gray-800">
       <img src="/storage/illustrasi/pimpinan-3d.jpg" alt="Slider" class="w-full h-full object-cover opacity-90">
       <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-        <h2 class="text-white text-3xl md:text-5xl font-bold text-center">Layanan Dokumentasi Pimpinan Kabupaten Mahakam Ulu</h2>
+        <h2 class="text-white text-3xl md:text-5xl font-bold text-center">Layanan Komunikasi dan Dokumentasi  Pimpinan Kabupaten Mahakam Ulu</h2>
       </div>
     </section>
 
@@ -78,7 +78,7 @@
     <!-- Footer -->
     <footer class="bg-gray-100 dark:bg-gray-800 py-6 border-t border-gray-300 dark:border-gray-700 text-center">
       <p class="text-sm text-gray-700 dark:text-gray-300">
-        &copy; 2025 Layanan Dokumentasi Pimpinan by Biro Administrasi Pimpinan Kabupaten Mahakam Ulu
+        &copy; 2025 Layanan Komunikasi dan Dokumentasi  Pimpinan by Biro Administrasi Pimpinan Kabupaten Mahakam Ulu
       </p>
     </footer>
   </div>

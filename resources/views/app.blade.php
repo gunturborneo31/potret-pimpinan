@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title inertia>Layanan Dokumentasi Pimpinan</title>
+        <title inertia>Layanan Komunikasi dan Dokumentasi  Pimpinan</title>
         <meta name="author" content="rezapadillah">
-        <meta name="description" content="Layanan Dokumentasi Pimpinan Pemerintah Kabupaten Mahakam Ulu">
-        <meta name="keywords" content="Layanan Dokumentasi Pimpinan, Mahulu, Mahakam Ulu, dokumentasi pimpinan">
-        <meta property="og:title" content="Layanan Dokumentasi Pimpinan">
-        <meta property="og:site_name" content="Layanan Dokumentasi Pimpinan">
+        <meta name="description" content="Layanan Komunikasi dan Dokumentasi  Pimpinan Pemerintah Kabupaten Mahakam Ulu">
+        <meta name="keywords" content="Layanan Komunikasi dan Dokumentasi  Pimpinan, Mahulu, Mahakam Ulu, dokumentasi pimpinan">
+        <meta property="og:title" content="Layanan Komunikasi dan Dokumentasi  Pimpinan">
+        <meta property="og:site_name" content="Layanan Komunikasi dan Dokumentasi  Pimpinan">
         <meta property="og:url" content="https://potretpimpinan.mahuluprov.go.id/">
-        <meta property="og:description" content="Layanan dokumentasi pimpinan Pemerintah Kabupaten Mahakam Ulu">
+        <meta property="og:description" content="Layanan Komunikasi dan Dokumentasi  Pimpinan Pemerintah Kabupaten Mahakam Ulu">
         <meta property="og:type" content="website">
         <meta property="og:image" content="{{ asset('img/og-image.jpg') }}">
 

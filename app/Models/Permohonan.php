@@ -25,7 +25,8 @@ class Permohonan extends Model
 
   protected $fillable = [
     'id', 'user_id', 'kategori', 'title', 'description',
-    'priority', 'file', 'disposisi', 'status'
+    'priority', 'file', 'disposisi', 'status',
+    'nama_pemohon', 'email_pemohon', 'no_hp_pemohon', 'instansi_pemohon'
 ];
 
     public function user()

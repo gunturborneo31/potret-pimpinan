@@ -250,7 +250,7 @@ watch(isCollapsed, (val) => {
         <!-- App Title -->
         <div class="hidden md:flex items-center gap-3">
           <img src="/img/logo-only.png" alt="Logo" class="h-8" />
-          <h1 class="text-lg font-bold text-orange-600 dark:text-orange-400">Layanan Dokumentasi Pimpinan</h1>
+          <h1 class="text-lg font-bold text-orange-600 dark:text-orange-400">Layanan Komunikasi dan Dokumentasi  Pimpinan</h1>
         </div>
 
         <div class="ml-auto flex items-center gap-4">

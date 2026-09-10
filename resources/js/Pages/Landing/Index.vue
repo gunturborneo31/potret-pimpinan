@@ -1,5 +1,5 @@
 <template>
-  <Head title="Layanan Dokumentasi Pimpinan - Pemerintah Kabupaten Mahakam Ulu" />
+  <Head title="Layanan Komunikasi dan Dokumentasi  Pimpinan - Pemerintah Kabupaten Mahakam Ulu" />
   <div :class="{ 'dark': isDarkMode }">
 
   <div class="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-white">
@@ -9,14 +9,15 @@
         <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3">
           <a href="/" class="flex items-center gap-2">
             <img src="/img/logo-only.png" alt="Logo" class="h-8 w-8 object-contain" />
-            <span class="font-bold text-xl">Layanan Dokumentasi Pimpinan</span>
+            <span class="font-bold text-xl">Layanan Komunikasi dan Dokumentasi  Pimpinan</span>
           </a>
           <div class="flex items-center gap-4 text-sm">
             <a href="/" class="text-orange-600 hover:underline">Beranda</a>
             <a href="/list-kegiatan" class="hover:underline">Kegiatan</a>
+            <a href="/permohonan/create" class="hover:underline">Permohonan</a>
             <!-- <a href="/list-berita" class="hover:underline">Berita</a> -->
-                <a href="login" class="hover:underline text-sm">Login</a>
-    <a href="register" class="hover:underline text-sm">Register</a>
+            <a href="login" class="hover:underline text-sm">Login</a>
+            <a href="register" class="hover:underline text-sm">Register</a>
             <button @click="toggleDarkMode" class="border px-3 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700">
               {{ isDarkMode ? '☀️' : '🌙' }}
             </button>
@@ -32,7 +33,7 @@
   <div class="aspect-[32/10] w-full">
     <img
       src="/img/slider-pimpinan-fix.jpg"
-      alt="Slider Layanan Dokumentasi Pimpinan"
+      alt="Slider Layanan Komunikasi dan Dokumentasi  Pimpinan"
       class="w-full h-full object-cover object-center"
     />
   </div>
@@ -61,7 +62,7 @@
     <!-- Kanan: Teks -->
     <div class="text-gray-700 dark:text-gray-300 leading-relaxed text-base sm:text-lg md:text-left text-center">
       <p>
-        Selamat datang di Layanan Dokumentasi Pimpinan. Layanan yang dikelola Bagian Protokol dan Komunikasi Pimpinan menyajikan dokumentasi, sambutan dan informasi kegiatan pimpinan. Kami berkomitmen memberikan akses publik terhadap dokumen sambutan/materi pimpinan, dokumentasi kegiatan pimpinan serta permohonan berkaitan dengan dokumentasi kegiatan pimpinan lainnya.
+        Selamat datang di Layanan Komunikasi dan Dokumentasi  Pimpinan. Layanan yang dikelola Bagian Protokol dan Komunikasi Pimpinan menyajikan dokumentasi, sambutan dan informasi kegiatan pimpinan. Kami berkomitmen memberikan akses publik terhadap dokumen sambutan/materi pimpinan, dokumentasi kegiatan pimpinan serta permohonan berkaitan dengan dokumentasi kegiatan pimpinan lainnya.
       </p>
     </div>
   </div>
@@ -245,7 +246,7 @@
       class="mb-4 p-4 bg-gray-100 dark:bg-gray-800 rounded shadow"
     >
       <p class="text-sm text-gray-500 dark:text-gray-400">
-        Dari: {{ maskName(p.user.name) }}
+        Dari: {{ maskName(p.nama_pemohon || p.user?.name || 'Anonim') }}
       </p>
 
       <p class="font-bold text-lg">{{ p.judul }}</p>
@@ -258,7 +259,7 @@
   <!-- Button Ajukan -->
   <div class="text-center">
    <a
-      href="/login"
+      href="/permohonan/create"
       class="inline-block bg-orange-600 text-white font-semibold px-6 py-3 rounded-xl shadow hover:bg-orange-700 transition"
     >
       Ajukan Permohonan →
@@ -383,7 +384,7 @@
 
     <!-- Footer -->
     <footer class="bg-gray-100 dark:bg-gray-800 text-center py-6 text-sm text-gray-600 dark:text-gray-300 mt-12 px-4">
-      &copy; 2025 Layanan Dokumentasi Pimpinan by Biro Administrasi Pimpinan Kabupaten Mahakam Ulu
+      &copy; 2025 Layanan Komunikasi dan Dokumentasi  Pimpinan by Biro Administrasi Pimpinan Kabupaten Mahakam Ulu
     </footer>
   </div>
   </div>

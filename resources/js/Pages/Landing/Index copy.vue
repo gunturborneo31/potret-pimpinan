@@ -1,5 +1,5 @@
 <template>
-  <Head title="Layanan Dokumentasi Pimpinan - Pemerintah Kabupaten Mahakam Ulu" />
+  <Head title="Layanan Komunikasi dan Dokumentasi  Pimpinan - Pemerintah Kabupaten Mahakam Ulu" />
   <div :class="{ 'dark': isDarkMode }">
 
   <div class="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-white">
@@ -7,7 +7,7 @@
     <!-- Navbar -->
     <nav class="bg-white dark:bg-gray-900 text-gray-800 dark:text-white px-4 py-4 flex flex-wrap justify-between items-center sticky top-0 z-50 shadow">
       <div class="font-bold text-xl mb-2 md:mb-0 w-full md:w-auto text-center md:text-left">
-        Layanan Dokumentasi Pimpinan
+        Layanan Komunikasi dan Dokumentasi  Pimpinan
       </div>
       <div class="flex flex-wrap gap-4 justify-center md:justify-end items-center w-full md:w-auto">
         <a href="#beranda" class="hover:underline text-sm">Beranda</a>
@@ -30,7 +30,7 @@
   <div class="aspect-[32/10] w-full">
     <img
       src="/img/slider-pimpinan.jpg"
-      alt="Slider Layanan Dokumentasi Pimpinan"
+      alt="Slider Layanan Komunikasi dan Dokumentasi  Pimpinan"
       class="w-full h-full object-cover object-center"
     />
   </div>
@@ -41,7 +41,7 @@
     <section id="sambutan" class="max-w-4xl mx-auto px-4 py-12 text-center">
       <H3 class="text-2xl font-semibold text-orange-600 mb-4">KERJA NYATA, TERSAJI JELAS</H3>
       <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-base sm:text-lg">
-        Selamat datang di Layanan Dokumentasi Pimpinan. Layanan yang dikelola Bagian Protokol dan Komunikasi Pimpinan menyajikan dokumentasi, sambutan dan informasi kegiatan pimpinan. Kami berkomitmen memberikan akses publik terhadap dokumen sambutan/materi pimpinan, dokumentasi kegiatan pimpinan serta permohonan berkaitan dengan dokumentasi kegiatan pimpinan lainnya.
+        Selamat datang di Layanan Komunikasi dan Dokumentasi  Pimpinan. Layanan yang dikelola Bagian Protokol dan Komunikasi Pimpinan menyajikan dokumentasi, sambutan dan informasi kegiatan pimpinan. Kami berkomitmen memberikan akses publik terhadap dokumen sambutan/materi pimpinan, dokumentasi kegiatan pimpinan serta permohonan berkaitan dengan dokumentasi kegiatan pimpinan lainnya.
       </p>
     </section>
 
@@ -198,7 +198,7 @@
 
     <!-- Footer -->
     <footer class="bg-gray-100 dark:bg-gray-800 text-center py-6 text-sm text-gray-600 dark:text-gray-300 mt-12 px-4">
-      &copy; 2025 Layanan Dokumentasi Pimpinan by Biro Administrasi Pimpinan Kabupaten Mahakam Ulu
+      &copy; 2025 Layanan Komunikasi dan Dokumentasi  Pimpinan by Biro Administrasi Pimpinan Kabupaten Mahakam Ulu
     </footer>
   </div>
   </div>

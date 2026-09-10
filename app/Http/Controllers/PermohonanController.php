@@ -40,8 +40,10 @@ public function index(Request $request)
     }
 
     if ($request->filled('user')) {
-        $query->whereHas('user', function ($q) use ($request) {
-            $q->where('name', 'like', '%' . $request->user . '%');
+        $query->where(function ($q) use ($request) {
+            $q->whereHas('user', function ($userQuery) use ($request) {
+                $userQuery->where('name', 'like', '%' . $request->user . '%');
+            })->orWhere('nama_pemohon', 'like', '%' . $request->user . '%');
         });
     }
 
@@ -93,12 +95,16 @@ public function create()
     public function store(Request $request)
     {
         $request->validate([
-        'kategori'    => 'required|string',
-        'title'       => 'required|string|max:255',
-        'description' => 'required|string',
-        'priority'    => 'required|in:Critical/Urgent,Medium,Low',
-        'file'        => 'nullable|file|max:10240', // 10MB
-        'disposisi'   => 'nullable|exists:users,id',
+        'nama_pemohon'     => 'required|string|max:255',
+        'email_pemohon'    => 'required|email|max:255',
+        'no_hp_pemohon'    => 'required|string|max:30',
+        'instansi_pemohon' => 'required|string|max:255',
+        'kategori'         => 'required|string',
+        'title'            => 'required|string|max:255',
+        'description'      => 'required|string',
+        'priority'         => 'required|in:Critical/Urgent,Medium,Low',
+        'file'             => 'nullable|file|max:10240', // 10MB
+        'disposisi'        => 'nullable|exists:users,id',
     ]);
 
     $path = null;
@@ -109,6 +115,10 @@ public function create()
     $permohonan = Permohonan::create([
         'id'          => Str::uuid(),
         'user_id'     => auth()->id(),
+        'nama_pemohon' => $request->nama_pemohon,
+        'email_pemohon' => $request->email_pemohon,
+        'no_hp_pemohon' => $request->no_hp_pemohon,
+        'instansi_pemohon' => $request->instansi_pemohon,
         'kategori'    => $request->kategori,
         'title'       => $request->title,
         'description' => $request->description,
@@ -244,4 +254,3 @@ public function destroy($id)
 
 
 }
-

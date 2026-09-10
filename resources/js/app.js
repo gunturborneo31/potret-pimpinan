@@ -21,7 +21,7 @@ window.$ = $
 window.jQuery = $
 
 
-const appName = import.meta.env.VITE_APP_NAME || 'Layanan Dokumentasi Pimpinan';
+const appName = import.meta.env.VITE_APP_NAME || 'Layanan Komunikasi dan Dokumentasi  Pimpinan';
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
